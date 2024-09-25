@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{font-family: 'Calibri'; font-size: 16px;}
+        .container {max-width: 700px; border: 1px solid #ccc; padding: 30px; box-sizing: border-box; margin: 50px auto 0;        }
+        .container h1{font-size: 30px; margin: 0 0 30px; text-align: center;}
+        .accordionBox h2{font-size: 20px; color: #474747; padding: 10px; margin: 20px 0px 0px; border: 1px solid #ccc; cursor: pointer; position: relative;}
+        .accordionBox h2:before{content:''; position: absolute; right: 15px; top: 16px; width: 8px; height: 8px; border: 1px solid #474747; transform: rotate(45deg); border-width: 0px 2px 2px 0px; }
+        .accordionBox .panel{ transition: all 0.2s ease; display: none; padding: 10px; border: 1px solid #ccc; border-top: 0px; margin-top: 0px;} 
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Accordion</h1>
+        <div class="accordion">
+            <div class="accordionBox">
+                <h2 onclick="opentab('penal1')">Accordion title One 1 </h2>
+                <div class="panel" id="penal1">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+            <div class="accordionBox">
+                <h2 onclick="opentab('penal2')">Accordion title Two 2 </h2>
+                <div class="panel" id="penal2">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+            <div class="accordionBox">
+                <h2 onclick="opentab('penal3')">Accordion title Three 3 </h2>
+                <div class="panel" id="penal3">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+            <div class="accordionBox">
+                <h2 onclick="opentab('penal4')">Accordion title Four 4 </h2>
+                <div class="panel" id="penal4">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+            
+            function opentab(panelId) {
+                var panels = document.querySelectorAll('.panel');
+                panels.forEach(panel => {
+                    panel.style.display = 'none';
+                    panel.style.transition = 'all 0.5s ease';
+                });
+               
+                var panel = document.getElementById(panelId);
+                panel.style.display = 'block';
+            }
+
+            // function opentab(panelId) {
+            //     var panels = document.querySelectorAll('.panel');
+            //     panels.forEach(
+            //         function(panel){
+            //         panel.style.display = 'none';
+            //     }
+            // );           
+            //     var panel = document.getElementById(panelId);
+            //     panel.style.display = 'block';
+            // }
+
+
+
+            // function opentab(panelId) {
+            //     var panels = document.querySelectorAll('.panel');
+            //     panels.forEach(function(penal) {
+            //         penal.style.display = 'none';
+            //     });
+            //     var penal = document.getElementById(panelId);
+            //     penal.style.display = 'block';
+            // }
+
+
+            // function opentab(penalId){
+            //     var penal = document.getElementById(penalId);
+
+            //     if(penal.style.display === "block") { 
+            //         penal.style.display = "none";
+            //     } else {
+            //         penal.style.display = "block";
+            //     }
+            // }
+
+    </script>
+</body>
+</html>
